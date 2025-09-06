@@ -7,7 +7,8 @@
 body {
     font-family: 'Cairo', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #f8f9fa; /* نص فاتح */
+    background: #0d1b2a; /* أزرق غامق */
     direction: rtl;
     text-align: right;
 }
@@ -20,21 +21,27 @@ body {
 
 /* Header */
 .header {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(13, 27, 42, 0.95) !important;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* دعم للسفاري */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #c5a253;
     animation: slideDown 0.8s ease-out;
+    color: #f8f9fa; /* نص فاتح */
 }
+
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 20px;
+    color:white;
+    
 }
 
 .logo {
@@ -52,7 +59,7 @@ body {
 }
 
 .logo h2 {
-    color: #2c5aa0;
+    color: #c5a253; /* ذهبي */
     font-weight: 700;
 }
 
@@ -63,24 +70,24 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-weight: 600;
     transition: color 0.3s ease;
     position: relative;
 }
 
 .nav a:hover {
-    color: #2c5aa0;
+    color: #c5a253;
 }
 
 .nav a::after {
-    content: '';
+    /* content: ''; */
     position: absolute;
     bottom: -5px;
     left: 0;
     width: 0;
     height: 2px;
-    background: #2c5aa0;
+    background: #c5a253;
     transition: width 0.3s ease;
 }
 
@@ -91,25 +98,14 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a1a2e 100%);
     display: flex;
     align-items: center;
     padding-top: 80px;
     position: relative;
     overflow: hidden;
 }
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    animation: float 20s ease-in-out infinite;
-}
-
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); animation: float 20s ease-in-out infinite; }
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -130,15 +126,15 @@ body {
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    color: white;
+    color: #c5a253;
     margin-bottom: 20px;
     line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #ddd;
     margin-bottom: 30px;
     font-weight: 400;
 }
@@ -177,25 +173,25 @@ body {
 }
 
 .btn-primary {
-    background: #ff6b6b;
-    color: white;
-    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+    background: #c5a253;
+    color: #0d1b2a;
+    box-shadow: 0 10px 30px rgba(197, 162, 83, 0.4);
 }
 
 .btn-primary:hover {
+    background: #d4af37;
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: #c5a253;
+    border: 2px solid #c5a253;
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: #667eea;
+    background: #c5a253;
+    color: #0d1b2a;
     transform: translateY(-3px);
 }
 
@@ -204,7 +200,7 @@ body {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     animation: slideInLeft 1s ease-out;
 }
 
@@ -234,20 +230,10 @@ body {
     object-fit: cover;
 }
 
-.slider-controls {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-}
-
 .slider-controls button {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(197, 162, 83, 0.2);
     border: none;
-    color: white;
+    color: #c5a253;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -258,44 +244,35 @@ body {
 }
 
 .slider-controls button:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(197, 162, 83, 0.4);
     transform: scale(1.1);
-}
-
-.slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
 }
 
 .dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(197, 162, 83, 0.5);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .dot.active {
-    background: white;
+    background: #c5a253;
     transform: scale(1.2);
 }
 
 /* Features Section */
 .features {
     padding: 100px 0;
-    background: #f8f9fa;
+    background: #1a1a2e;
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #333;
+    color: #c5a253;
     margin-bottom: 60px;
     position: relative;
 }
@@ -308,87 +285,47 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, #c5a253, #d4af37);
     border-radius: 2px;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-}
-
 .feature-card {
-    background: white;
+    background: #0d1b2a;
     padding: 40px 30px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #c5a253;
+    color: #f8f9fa;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.feature-card:hover::before {
-    transform: scaleX(1);
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .feature-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #c5a253, #d4af37);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
     font-size: 2rem;
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.feature-card:hover .feature-icon {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.feature-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.feature-card p {
-    color: #666;
-    line-height: 1.6;
+    color: #0d1b2a;
 }
 
 /* Pricing Section */
 .pricing {
     padding: 100px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a1a2e 100%);
+    color: #f8f9fa;
 }
 
 .pricing .section-title {
-    color: white;
+    color: #c5a253;
 }
 
 .pricing-subtitle {
@@ -398,64 +335,42 @@ body {
     opacity: 0.9;
 }
 
-.pricing-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
 .pricing-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(13, 27, 42, 0.9);
     padding: 40px 30px;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #c5a253;
     transition: all 0.3s ease;
+    color: #f8f9fa;
 }
 
 .pricing-card.featured {
     transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-}
-
-.pricing-card:hover {
-    transform: translateY(-10px);
-}
-
-.pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-10px);
+    background: rgba(197, 162, 83, 0.2);
+    border: 2px solid #c5a253;
 }
 
 .pricing-card h3 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 20px;
+    color: #c5a253;
 }
-
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
 .price {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #ff6b6b;
+    color: #d4af37;
 }
 
 /* Contact Section */
 .contact {
     padding: 100px 0;
-    background: #f8f9fa;
+    background: #1a1a2e;
 }
-
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
+.contact-buttons { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
 .contact-btn {
     display: flex;
     align-items: center;
@@ -466,163 +381,28 @@ body {
     font-weight: 600;
     font-size: 1.2rem;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .whatsapp {
     background: #25d366;
     color: white;
 }
-
-.whatsapp:hover {
-    background: #128c7e;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-}
-
+.whatsapp:hover { background: #128c7e; transform: translateY(-5px); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4); }
 .snapchat {
     background: #fffc00;
     color: #333;
 }
-
-.snapchat:hover {
-    background: #f1c40f;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 252, 0, 0.4);
-}
-
-.contact-btn i {
-    font-size: 1.5rem;
-}
-
+.snapchat:hover { background: #f1c40f; transform: translateY(-5px); box-shadow: 0 15px 40px rgba(255, 252, 0, 0.4); }
 /* Footer */
 .footer {
-    background: #333;
-    color: white;
+    background: #0d1b2a;
+    color: #c5a253;
     text-align: center;
     padding: 30px 0;
 }
-
+.pricing-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 20px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s ease; }
+.pricing-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+.contact-btn i { font-size: 1.5rem; }
 /* Animations */
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Scroll Animations */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-.animate-on-scroll.animated {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .nav {
-        display: none;
-    }
-    
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .pricing-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .slider-container {
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-    
-    .btn {
-        padding: 12px 25px;
-        font-size: 1rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-}
-
+@keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes slideInRight { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } } @keyframes slideInLeft { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } } @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } } @keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } /* Scroll Animations */ .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; } .animate-on-scroll.animated { opacity: 1; transform: translateY(0); } /* Responsive Design */ @media (max-width: 768px) { .hero-content { grid-template-columns: 1fr; gap: 30px; text-align: center; } .hero-title { font-size: 2.5rem; } .hero-subtitle { font-size: 1.2rem; } .nav { display: none; } .features-grid { grid-template-columns: 1fr; } .pricing-cards { grid-template-columns: 1fr; } .contact-buttons { flex-direction: column; align-items: center; } .slider-container { height: 250px; } } @media (max-width: 480px) { .hero-title { font-size: 2rem; } .hero-subtitle { font-size: 1rem; } .btn { padding: 12px 25px; font-size: 1rem; } .section-title { font-size: 2rem; } }
